@@ -1,0 +1,201 @@
+div.form input[type=text],
+div.form input[type=password],
+div.form textarea,
+div.form select
+{
+	/*margin: 0.2em 0 0.5em 0;*/
+	margin: 0.2em 0 0 0;
+	padding: 0.4em;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	
+	border:solid 2px #CFCFCF;
+}
+
+div.form fieldset, fieldset
+{
+	border: 1px solid #DDD;
+	padding: 10px;
+	margin: 0 0 10px 0;
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+
+div.form label
+{
+	font-weight: bold;
+	display: block;
+}
+
+span label.labelhelper, .labelhelper  {
+	clear:both;
+	color:#346CA7;
+	font-size:11px !important;
+	font-weight:normal !important;
+	line-height:160%;
+	margin:0;
+	padding-top:0;
+}
+
+div.form .row
+{
+	margin: 5px 0;
+	padding: 3px;
+}
+
+div.form .hint
+{
+	margin: 0;
+	padding: 0;
+	color: #999;
+}
+
+.stick{
+	padding: 15px 20px 15px 65px;
+	position:relative;
+    padding:1em 1.5em;
+    margin:2em auto;
+    overflow:hidden;
+	-webkit-border-radius:5px 0 5px 5px;
+    -moz-border-radius:5px 0 5px 5px;
+    border-radius:5px 0 5px 5px;
+	-webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2); 
+}
+
+.stick:before {
+    border-width:8px; /* Triggers a 1px 'step' along the diagonal in Safari 5 (and Chrome 10) */
+    border-color:#fff #fff transparent transparent; /* Avoids the 1px 'step' in webkit. Background colour shows through */
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius:0 0 0 5px;
+    border-radius:0 0 0 5px;
+	content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    /*border-width:0 16px 16px 0; /* This trick side-steps a webkit bug */
+    border-style:solid;
+    display:block; width:0; /* Only for Firefox 3.0 damage limitation */
+    /* Optional: shadow */
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+       -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+            box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);	
+}
+
+div.form .note
+{
+	font-style: italic;
+	background: #DFF4FF url(images/information.png) center no-repeat;
+	background-position: 15px 50%; /* x-pos y-pos */
+	text-align: left;
+	font-weight: bold;
+	padding: 15px 20px 15px 65px;
+}
+
+div.form .note:before{
+	border-color:#fff #fff #C5D9E2 #C5D9E2; /* A bit more verbose to work with .rounded too */
+    background:#C5D9E2; /* For when also applying a border-radius */
+}
+
+div.form span.required, span.required
+{
+	color: #C00;
+}
+
+div.form div.error label,
+div.form label.error,
+div.form span.error
+{
+	color: #C00;
+}
+
+div.form div.error input,
+div.form div.error textarea,
+div.form div.error select,
+div.form input.error,
+div.form textarea.error,
+div.form select.error
+{
+	background: #FFE4DF;
+	border-color: #EF6E59;
+}
+
+div.form div.success input,
+div.form div.success textarea,
+div.form div.success select,
+div.form input.success,
+div.form textarea.success,
+div.form select.success
+{
+	background: #E6EFC2;
+	border-color: #C6D880;
+}
+
+div.form .errorSummary
+{
+	background: #FFE4DF url(images/exclamation.png) center no-repeat;
+	background-position: 15px 50%; /* x-pos y-pos */
+	text-align: left;
+}
+
+div.form .errorSummary li
+{
+	list-style-type: none;
+}
+
+div.form .errorSummary:before{
+	border-color:#fff #fff #EFBAB1 #EFBAB1;
+    background:#EFBAB1;
+}
+
+div.form .errorMessage
+{
+	color: red;
+}
+
+div.form .errorSummary p
+{
+	margin: 0;
+	padding: 0 0 0 35px;
+	font-weight: bold;
+}
+
+div.form .errorSummary ul
+{
+	margin: 0;
+	padding: 0 0 0 35px;
+}
+
+.over {
+	background-color:#DFF4FF;
+	margin:5px 0;
+	padding: 3px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+input[type="text"], input[type="password"], textarea, selectbox {
+	/*padding:2px;*/
+	resize: none;
+}
+
+.dropdown {
+	width: 215px;
+	height: 200px;
+}
+
+fieldset legend
+{
+	font-size:18px;
+}
+
+.betterform {
+	background-color: #EFEFEF;
+}

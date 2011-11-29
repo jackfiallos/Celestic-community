@@ -1,0 +1,2 @@
+<h3 style="margin-top:10px"><?php echo Yii::t('tasks','UsersWorkinOnDefine'); ?></h3>
+<?php echo $this->renderPartial('_formrelated', array('model'=>$model, 'users'=>$users, 'clients'=>$clients, 'userIDs'=>$userIDs)); ?> 

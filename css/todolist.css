@@ -1,0 +1,120 @@
+/* The todo items are grouped into an UL unordered list */
+ul.todoList, ul.tasklist {
+	margin:0 auto;
+	/*width:500px;*/
+	position:relative;
+}
+ul.todoList li, ul.tasklist li {
+	border:1px solid #EEEEEE;
+	list-style:none;
+	margin:6px;
+	padding:6px 9px;
+	position:relative;
+	/* CSS3 text shadow and rounded corners: */
+	/*text-shadow:1px 1px 0 white;*/
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+ul.subtasks li.todo{
+	cursor:move;
+}
+ul.subtasks li:hover{
+	border-color:#FFDD3F;
+	/* CSS3 glow effect: */
+	-moz-box-shadow:0 0 5px #FFEC1F;
+	-webkit-box-shadow:0 0 5px #FFEC1F;
+	box-shadow:0 0 5px #FFEC1F;
+}
+/* The edit and delete buttons */
+.todo .actions{
+	position:absolute;
+	right:7px;
+	top:6px;
+}
+.todo .actions a, .todo .actionsleft a{
+	display:block;
+	width:16px;
+	height:16px;
+	overflow:hidden;
+	float:left;
+	text-indent:-9999px;
+	margin:3px;
+}
+.todo .actions a.edit{
+	background:url("images/edit.png") no-repeat center center;
+}
+.todo .actionsleft a.check{
+	background:url("images/check.png") no-repeat center center;
+}
+.todo .actions a.delete{
+	background:url("images/delete.png") no-repeat center center;
+}
+.todo .actions a, .todo .actionsleft a{
+	opacity:.60;
+    -moz-opacity: 0.60;
+    filter: alpha(opacity=60);
+}
+.todo .actions a:hover, .todo .actionsleft a:hover{
+	opacity:1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+}
+/* The edit textbox */
+.todo input{
+	border:1px solid #CCCCCC;
+	color:#666666;
+	padding:3px 4px;
+	width:300px;
+}
+/* The Save and Cancel edit links: */
+.editTodo{
+	display:inline;
+	padding-left:3px;
+	background-color:#fff7d1;
+	color: #000;
+}
+.editTodo a{
+	font-weight:bold;
+	text-decoration: none;
+}
+a.discardChanges{
+	color:#C00 !important;
+}
+a.saveChanges{
+	color:#4DB209 !important;
+}
+/* Overwriting some of the default jQuery UI styles */
+.ui-button,.ui-dialog-titlebar{
+	font-size:0.72em !important;
+}
+#dialog-confirm{
+	display:none;
+	font-size:0.9em;
+	padding:1em 1em 0;
+}
+#addButton{
+	margin:20px auto;
+}
+/* Green button class: */
+a.green-button, a.green-button:visited{
+	color:black;
+	display:block;
+	font-size:10px;
+	font-weight:bold;
+	height:15px;
+	padding:6px 5px 4px;
+	text-align:center;
+	width:60px;
+	
+	text-shadow:1px 1px 1px #DDDDDD;
+	background:url("img/button_green.png") no-repeat left top;
+}
+a.green-button:hover{
+	text-decoration:none;
+	background-position:left bottom;
+}
+
+.ui-state-highlight {
+	height: 1.5em; line-height: 1.2em; background-color:#FFFECF;
+}

@@ -1,0 +1,36 @@
+Celestic Community is free software. It is released under the terms of 
+the following GNU General Public License.
+
+Copyright (c) 2009 - 2011 by Qbit Mexhico (http://www.qbit.com.mx)
+All rights reserved.
+
+All files in this work, except the yii directory, are now 
+covered by the following copyright notice. Please note that 
+included libraries in the protected/extensions directory may 
+have their own license.
+
+This file is part of Celestic Community
+
+Celestic Community is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation; either version 2 of the License, or 
+any later version.
+
+Celestic Community is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with Celestic Community.  If not, see <http://www.gnu.org/licenses/>.
+
+Icons by Fatcow - Free Web Icons 
+-------------------------------------------------------------------------------
+Fatcow icon sets are licensed under a Creative Commons Attribution 3.0 License. 
+This means you can freely use these icons for any purpose, private and 
+commercial, including online services, templates, themes and 
+software. However, you should include a link to this page in your 
+credits. The icons may not be resold, sublicensed, rented, transferred or 
+otherwise made available for use (including uploading the font archive to 
+publicly available websites). Please link to this page on fatcow.com if 
+you would like to spread the word.

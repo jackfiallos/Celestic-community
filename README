@@ -1,0 +1,66 @@
+ABOUT
+===================
+Celestic Community is a web based collaborative platform 
+to manage software projects. Celestic is an 
+GNU General Public Licensed. See COPYING.TXT
+
+SITE URL
+===================
+http://qbit.com.mx/labs/celestic
+http://qbit.com.mx/labs/celestic/blog
+http://qbit.com.mx/labs/celestic/forum
+
+EMAIL
+===================
+erlingfiallos@gmail.com
+
+SYSTEM REQUIREMENTS
+===================
+Celestic Community requires a web server, PHP (5.0 or greater) 
+and MySQL. The recommended web server is Apache.
+
+RECOMMENDED
+===================
+PHP 5.1.0 or above
+MySQL 4.1+
+Apache 2.0+
+
+* PHP    : http://www.php.net/
+* MySQL  : http://www.mysql.com/
+* Apache : http://www.apache.org/
+
+INSTALLATION
+===================
+1. Download Celestic from - http://code.google.com/p/celestic-community/
+2. Download Yii Framework from - http://www.yiiframework.com/download/
+3. Unpack Celestic and Yii Framework .. both at the same level folder
+4. Create database to use with Celestic
+5. Unpack compress file and open celestic/protected/config/db.php file and configure database parameters
+6. Upload to your web server
+7. Direct your browser to Celestic application URL
+
+If you have troubles configuring Yii Framework path, 
+please check Celestic/index.php
+This version of Celestic was created using yii-1.1.8.r3324
+
+Once you have all set
+You should be finished in a matter of minutes.
+
+For better performance (email and I18N), don't forget to configure 
+params parameters in celestic/protected/config/main.php
+
+BUGS
+===================
+If you think you have discovered a bug in Celestic Community you should 
+report it! We keep track of all bugs and features at 
+https://code.google.com/p/celestic-community/. Create an account and 
+report the bug with as much information to help us reproduce it.
+
+FOLLOWING ALONG
+===================
+If you would like to keep up with current Celestic Community news/happenings 
+you can follow our Twitter account:
+
+@celesticMX
+http://twitter.com/celesticMX 
+news/happenings going on in the Celestic Community development/community.

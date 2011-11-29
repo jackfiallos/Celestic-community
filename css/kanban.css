@@ -1,0 +1,58 @@
+#eventLimiter {
+    margin: 40px 0;
+    overflow: hidden;
+    padding-top: 10px;
+    width: 100%;
+	display:block;
+}
+
+li.milestone span.icon {
+    background: url("../images/icons/tasks-12.png") no-repeat scroll 0 0 transparent;
+}
+div.content {
+    display: none;
+}
+div.content div.body {
+    background-color: #E6F8FF;
+	padding:3px;
+	color:#548DA5;
+}
+.event {
+    float: left;
+    margin: 0 5px 50px;
+    padding: 4px;
+    text-align: left;
+    width: 100%;
+}
+.eventHeading {
+    font-size: 15px;
+	font-weight: bold;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+	background: none repeat scroll 0 0 #E6F8FF;
+    border: 1px solid #D4E6EE;
+    color: #548DA5;
+}
+ul.eventList{
+	min-height: 20px;
+}
+.stateplaceholder{
+	min-height: 20px;
+}
+.eventList li {
+    border: 1px solid #EEEEEE;
+    list-style: none outside none;
+    margin: 5px;
+    padding: 4px 7px;
+}
+.eventList li:hover {
+    cursor: pointer;
+}
+li span {
+    display: block;
+    float: left;
+    height: 16px;
+    margin-right: 5px;
+    width: 16px;
+}
