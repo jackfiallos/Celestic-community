@@ -7,7 +7,6 @@ $form=$this->beginWidget('CActiveForm', array(
 	'action'=>Yii::app()->createUrl('site/register'),
 ));
 ?>
-
 	<h3><?php echo Yii::t('users','user_accountManager');?></h3>
 	<div class="input-module box">
 		<div class="subcolumns">
@@ -47,7 +46,7 @@ $form=$this->beginWidget('CActiveForm', array(
 				</div>
 			</div>
 		</div>
-	</div><br /><br />
+	</div>
 	<div class="row buttons">
 		<?php echo CHtml::button(Yii::t('site','create'), array('type'=>'submit', 'class'=>'button big primary', 'tabindex'=>7)); ?>
 		<?php echo CHtml::button(Yii::t('site','reset'), array('type'=>'reset', 'class'=>'button big', 'tabindex'=>8)); ?>

@@ -2,15 +2,12 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-CREATE SCHEMA IF NOT EXISTS `celestic` DEFAULT CHARACTER SET latin1 ;
-USE `celestic` ;
-
 -- -----------------------------------------------------
--- Table `celestic`.`stb_country`
+-- Table `stb_country`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_country` ;
+DROP TABLE IF EXISTS `stb_country` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_country` (
+CREATE  TABLE IF NOT EXISTS `stb_country` (
   `country_id` INT NOT NULL AUTO_INCREMENT ,
   `country_name` VARCHAR(45) NOT NULL ,
   `country_continent` VARCHAR(45) NOT NULL ,
@@ -21,11 +18,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`stb_city`
+-- Table `stb_city`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_city` ;
+DROP TABLE IF EXISTS `stb_city` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_city` (
+CREATE  TABLE IF NOT EXISTS `stb_city` (
   `city_id` INT NOT NULL AUTO_INCREMENT ,
   `city_name` VARCHAR(45) NOT NULL ,
   `city_code` VARCHAR(45) NOT NULL ,
@@ -38,11 +35,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_address`
+-- Table `tb_address`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_address` ;
+DROP TABLE IF EXISTS `tb_address` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_address` (
+CREATE  TABLE IF NOT EXISTS `tb_address` (
   `address_id` INT NOT NULL AUTO_INCREMENT ,
   `address_text` VARCHAR(100) NULL ,
   `address_postalCode` VARCHAR(6) NULL ,
@@ -55,11 +52,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_timezones`
+-- Table `tb_timezones`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_timezones` ;
+DROP TABLE IF EXISTS `tb_timezones` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_timezones` (
+CREATE  TABLE IF NOT EXISTS `tb_timezones` (
   `timezone_id` INT NOT NULL AUTO_INCREMENT ,
   `timezone_name` VARCHAR(45) NULL ,
   PRIMARY KEY (`timezone_id`) )
@@ -67,11 +64,11 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`stb_accounts`
+-- Table `stb_accounts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_accounts` ;
+DROP TABLE IF EXISTS `stb_accounts` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_accounts` (
+CREATE  TABLE IF NOT EXISTS `stb_accounts` (
   `account_id` INT NOT NULL AUTO_INCREMENT ,
   `account_name` VARCHAR(45) NOT NULL ,
   `account_logo` VARCHAR(45) NULL DEFAULT NULL ,
@@ -88,11 +85,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_users`
+-- Table `tb_users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_users` ;
+DROP TABLE IF EXISTS `tb_users` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_users` (
+CREATE  TABLE IF NOT EXISTS `tb_users` (
   `user_id` INT NOT NULL AUTO_INCREMENT ,
   `user_name` VARCHAR(45) NOT NULL ,
   `user_lastname` VARCHAR(45) NOT NULL ,
@@ -111,11 +108,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_companies`
+-- Table `tb_companies`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_companies` ;
+DROP TABLE IF EXISTS `tb_companies` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_companies` (
+CREATE  TABLE IF NOT EXISTS `tb_companies` (
   `company_id` INT NOT NULL AUTO_INCREMENT ,
   `company_name` VARCHAR(100) NOT NULL ,
   `company_url` VARCHAR(100) NULL ,
@@ -129,11 +126,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_companies_has_tb_users`
+-- Table `tb_companies_has_tb_users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_companies_has_tb_users` ;
+DROP TABLE IF EXISTS `tb_companies_has_tb_users` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_companies_has_tb_users` (
+CREATE  TABLE IF NOT EXISTS `tb_companies_has_tb_users` (
   `company_id` INT NOT NULL ,
   `user_id` INT NOT NULL )
 ENGINE = MyISAM
@@ -141,11 +138,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_currencies`
+-- Table `tb_currencies`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_currencies` ;
+DROP TABLE IF EXISTS `tb_currencies` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_currencies` (
+CREATE  TABLE IF NOT EXISTS `tb_currencies` (
   `currency_id` INT NOT NULL AUTO_INCREMENT ,
   `currency_sign` VARCHAR(3) NOT NULL ,
   `currency_code` VARCHAR(3) NOT NULL ,
@@ -155,11 +152,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_projects`
+-- Table `tb_projects`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_projects` ;
+DROP TABLE IF EXISTS `tb_projects` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_projects` (
+CREATE  TABLE IF NOT EXISTS `tb_projects` (
   `project_id` INT NOT NULL AUTO_INCREMENT ,
   `project_name` VARCHAR(100) NOT NULL ,
   `project_description` TEXT NOT NULL ,
@@ -196,11 +193,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_status`
+-- Table `tb_status`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_status` ;
+DROP TABLE IF EXISTS `tb_status` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_status` (
+CREATE  TABLE IF NOT EXISTS `tb_status` (
   `status_id` INT NOT NULL AUTO_INCREMENT ,
   `status_name` VARCHAR(45) NOT NULL ,
   `status_order` INT NOT NULL DEFAULT 0 ,
@@ -212,11 +209,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_expenses`
+-- Table `tb_expenses`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_expenses` ;
+DROP TABLE IF EXISTS `tb_expenses` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_expenses` (
+CREATE  TABLE IF NOT EXISTS `tb_expenses` (
   `expense_id` INT NOT NULL AUTO_INCREMENT ,
   `expense_name` VARCHAR(45) NOT NULL ,
   `expense_number` VARCHAR(45) NOT NULL ,
@@ -230,11 +227,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_budgets`
+-- Table `tb_budgets`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_budgets` ;
+DROP TABLE IF EXISTS `tb_budgets` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_budgets` (
+CREATE  TABLE IF NOT EXISTS `tb_budgets` (
   `budget_id` INT NOT NULL AUTO_INCREMENT ,
   `budget_date` DATE NOT NULL ,
   `budget_duedate` DATE NOT NULL ,
@@ -250,11 +247,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_diagrams`
+-- Table `tb_diagrams`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_diagrams` ;
+DROP TABLE IF EXISTS `tb_diagrams` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_diagrams` (
+CREATE  TABLE IF NOT EXISTS `tb_diagrams` (
   `diagram_id` INT NOT NULL AUTO_INCREMENT ,
   `diagram_name` VARCHAR(45) NOT NULL ,
   `project_id` INT NOT NULL ,
@@ -265,11 +262,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_modules`
+-- Table `tb_modules`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_modules` ;
+DROP TABLE IF EXISTS `tb_modules` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_modules` (
+CREATE  TABLE IF NOT EXISTS `tb_modules` (
   `module_id` INT NOT NULL AUTO_INCREMENT ,
   `module_name` VARCHAR(45) NOT NULL ,
   `module_className` VARCHAR(45) NOT NULL ,
@@ -282,28 +279,29 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_comments`
+-- Table `tb_comments`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_comments` ;
+DROP TABLE IF EXISTS `tb_comments` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_comments` (
+CREATE  TABLE IF NOT EXISTS `tb_comments` (
   `comment_id` INT NOT NULL AUTO_INCREMENT ,
   `comment_date` DATETIME NOT NULL ,
   `comment_text` TEXT NOT NULL ,
   `comment_resourceid` INT NOT NULL ,
   `module_id` INT NOT NULL ,
   `user_id` INT NOT NULL ,
+  `project_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`comment_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_documents`
+-- Table `tb_documents`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_documents` ;
+DROP TABLE IF EXISTS `tb_documents` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_documents` (
+CREATE  TABLE IF NOT EXISTS `tb_documents` (
   `document_id` INT NOT NULL AUTO_INCREMENT ,
   `project_id` INT NOT NULL ,
   `document_name` VARCHAR(45) NOT NULL ,
@@ -321,11 +319,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_invoices`
+-- Table `tb_invoices`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_invoices` ;
+DROP TABLE IF EXISTS `tb_invoices` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_invoices` (
+CREATE  TABLE IF NOT EXISTS `tb_invoices` (
   `invoice_id` INT NOT NULL AUTO_INCREMENT ,
   `invoice_number` VARCHAR(45) NOT NULL ,
   `invoice_date` DATE NOT NULL ,
@@ -338,11 +336,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_clients`
+-- Table `tb_clients`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_clients` ;
+DROP TABLE IF EXISTS `tb_clients` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_clients` (
+CREATE  TABLE IF NOT EXISTS `tb_clients` (
   `client_id` INT NOT NULL AUTO_INCREMENT ,
   `user_id` INT NOT NULL ,
   PRIMARY KEY (`client_id`) )
@@ -351,11 +349,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_expensesConcepts`
+-- Table `tb_expensesConcepts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_expensesConcepts` ;
+DROP TABLE IF EXISTS `tb_expensesConcepts` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_expensesConcepts` (
+CREATE  TABLE IF NOT EXISTS `tb_expensesConcepts` (
   `expensesConcept_id` INT NOT NULL AUTO_INCREMENT ,
   `expensesConcept_quantity` INT NOT NULL ,
   `expensesConcept_description` TEXT NOT NULL ,
@@ -367,11 +365,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_budgetsConcepts`
+-- Table `tb_budgetsConcepts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_budgetsConcepts` ;
+DROP TABLE IF EXISTS `tb_budgetsConcepts` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_budgetsConcepts` (
+CREATE  TABLE IF NOT EXISTS `tb_budgetsConcepts` (
   `budgetsConcept_id` INT NOT NULL AUTO_INCREMENT ,
   `budgetsConcept_quantity` INT NOT NULL ,
   `budgetsConcept_description` TEXT NOT NULL ,
@@ -383,11 +381,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_invoicesConcepts`
+-- Table `tb_invoicesConcepts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_invoicesConcepts` ;
+DROP TABLE IF EXISTS `tb_invoicesConcepts` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_invoicesConcepts` (
+CREATE  TABLE IF NOT EXISTS `tb_invoicesConcepts` (
   `invoicesConcept_id` INT NOT NULL AUTO_INCREMENT ,
   `invoicesConcept_quantity` INT NOT NULL ,
   `invoicesConcept_description` TEXT NOT NULL ,
@@ -399,11 +397,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_cases`
+-- Table `tb_cases`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_cases` ;
+DROP TABLE IF EXISTS `tb_cases` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_cases` (
+CREATE  TABLE IF NOT EXISTS `tb_cases` (
   `case_id` INT NOT NULL AUTO_INCREMENT ,
   `case_date` DATE NOT NULL ,
   `case_code` VARCHAR(15) NOT NULL ,
@@ -421,11 +419,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_taskTypes`
+-- Table `tb_taskTypes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_taskTypes` ;
+DROP TABLE IF EXISTS `tb_taskTypes` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_taskTypes` (
+CREATE  TABLE IF NOT EXISTS `tb_taskTypes` (
   `taskTypes_id` INT NOT NULL AUTO_INCREMENT ,
   `taskTypes_name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`taskTypes_id`) )
@@ -434,11 +432,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_milestones`
+-- Table `tb_milestones`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_milestones` ;
+DROP TABLE IF EXISTS `tb_milestones` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_milestones` (
+CREATE  TABLE IF NOT EXISTS `tb_milestones` (
   `milestone_id` INT NOT NULL AUTO_INCREMENT ,
   `milestone_title` VARCHAR(100) NOT NULL ,
   `milestone_description` TEXT NOT NULL ,
@@ -452,11 +450,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_taskStages`
+-- Table `tb_taskStages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_taskStages` ;
+DROP TABLE IF EXISTS `tb_taskStages` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_taskStages` (
+CREATE  TABLE IF NOT EXISTS `tb_taskStages` (
   `taskStage_id` INT NOT NULL AUTO_INCREMENT ,
   `taskStage_name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`taskStage_id`) )
@@ -465,11 +463,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_tasks`
+-- Table `tb_tasks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_tasks` ;
+DROP TABLE IF EXISTS `tb_tasks` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_tasks` (
+CREATE  TABLE IF NOT EXISTS `tb_tasks` (
   `task_id` INT NOT NULL AUTO_INCREMENT ,
   `task_name` VARCHAR(100) NOT NULL ,
   `task_description` TEXT NOT NULL ,
@@ -491,11 +489,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_users_has_tb_modules`
+-- Table `tb_users_has_tb_modules`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_users_has_tb_modules` ;
+DROP TABLE IF EXISTS `tb_users_has_tb_modules` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_users_has_tb_modules` (
+CREATE  TABLE IF NOT EXISTS `tb_users_has_tb_modules` (
   `user_id` INT NOT NULL ,
   `module_id` INT NOT NULL )
 ENGINE = MyISAM
@@ -503,11 +501,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_logs`
+-- Table `tb_logs`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_logs` ;
+DROP TABLE IF EXISTS `tb_logs` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_logs` (
+CREATE  TABLE IF NOT EXISTS `tb_logs` (
   `log_id` INT NOT NULL AUTO_INCREMENT ,
   `log_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   `log_activity` VARCHAR(45) NOT NULL ,
@@ -523,11 +521,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_secuenceTypes`
+-- Table `tb_secuenceTypes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_secuenceTypes` ;
+DROP TABLE IF EXISTS `tb_secuenceTypes` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_secuenceTypes` (
+CREATE  TABLE IF NOT EXISTS `tb_secuenceTypes` (
   `secuenceTypes_id` INT NOT NULL AUTO_INCREMENT ,
   `secuenceTypes_name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`secuenceTypes_id`) )
@@ -536,11 +534,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_secuences`
+-- Table `tb_secuences`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_secuences` ;
+DROP TABLE IF EXISTS `tb_secuences` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_secuences` (
+CREATE  TABLE IF NOT EXISTS `tb_secuences` (
   `secuence_id` INT NOT NULL AUTO_INCREMENT ,
   `secuence_step` INT NOT NULL ,
   `secuence_action` VARCHAR(100) NOT NULL ,
@@ -553,11 +551,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_validations`
+-- Table `tb_validations`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_validations` ;
+DROP TABLE IF EXISTS `tb_validations` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_validations` (
+CREATE  TABLE IF NOT EXISTS `tb_validations` (
   `validation_id` INT NOT NULL AUTO_INCREMENT ,
   `validation_field` VARCHAR(45) NOT NULL ,
   `validation_description` VARCHAR(150) NOT NULL ,
@@ -568,11 +566,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_users_has_tb_tasks`
+-- Table `tb_users_has_tb_tasks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_users_has_tb_tasks` ;
+DROP TABLE IF EXISTS `tb_users_has_tb_tasks` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_users_has_tb_tasks` (
+CREATE  TABLE IF NOT EXISTS `tb_users_has_tb_tasks` (
   `users_has_tasks_id` INT NOT NULL AUTO_INCREMENT ,
   `user_id` INT NULL DEFAULT 0 ,
   `task_id` INT NULL DEFAULT 0 ,
@@ -582,11 +580,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_projects_has_tb_users`
+-- Table `tb_projects_has_tb_users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_projects_has_tb_users` ;
+DROP TABLE IF EXISTS `tb_projects_has_tb_users` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_projects_has_tb_users` (
+CREATE  TABLE IF NOT EXISTS `tb_projects_has_tb_users` (
   `projects_has_users_id` INT NOT NULL AUTO_INCREMENT ,
   `project_id` INT NULL DEFAULT 0 ,
   `user_id` INT NULL DEFAULT 0 ,
@@ -597,11 +595,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`stb_authItems`
+-- Table `stb_authItems`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_authItems` ;
+DROP TABLE IF EXISTS `stb_authItems` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_authItems` (
+CREATE  TABLE IF NOT EXISTS `stb_authItems` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(64) NOT NULL ,
   `type` INT NOT NULL ,
@@ -615,11 +613,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`stb_authItemChilds`
+-- Table `stb_authItemChilds`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_authItemChilds` ;
+DROP TABLE IF EXISTS `stb_authItemChilds` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_authItemChilds` (
+CREATE  TABLE IF NOT EXISTS `stb_authItemChilds` (
   `parent` VARCHAR(64) NOT NULL ,
   `child` VARCHAR(64) NOT NULL ,
   PRIMARY KEY (`parent`, `child`) )
@@ -628,11 +626,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`stb_authAssignments`
+-- Table `stb_authAssignments`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`stb_authAssignments` ;
+DROP TABLE IF EXISTS `stb_authAssignments` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`stb_authAssignments` (
+CREATE  TABLE IF NOT EXISTS `stb_authAssignments` (
   `itemname` VARCHAR(64) NOT NULL ,
   `userid` VARCHAR(64) NOT NULL ,
   `bizrule` TEXT NULL ,
@@ -643,11 +641,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_tasksDependant`
+-- Table `tb_tasksDependant`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_tasksDependant` ;
+DROP TABLE IF EXISTS `tb_tasksDependant` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_tasksDependant` (
+CREATE  TABLE IF NOT EXISTS `tb_tasksDependant` (
   `taskDependant_id` INT NOT NULL AUTO_INCREMENT ,
   `taskDependant_task_id` INT NOT NULL ,
   `task_id` INT NOT NULL ,
@@ -657,11 +655,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_notifications`
+-- Table `tb_notifications`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_notifications` ;
+DROP TABLE IF EXISTS `tb_notifications` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_notifications` (
+CREATE  TABLE IF NOT EXISTS `tb_notifications` (
   `notification_id` INT NOT NULL AUTO_INCREMENT ,
   `notification_allowed` TINYINT(1)  NOT NULL DEFAULT 0 ,
   `notification_resourceid` INT NOT NULL DEFAULT 0 ,
@@ -672,11 +670,11 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_riskClassification`
+-- Table `tb_riskClassification`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_riskClassification` ;
+DROP TABLE IF EXISTS `tb_riskClassification` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_riskClassification` (
+CREATE  TABLE IF NOT EXISTS `tb_riskClassification` (
   `riskclassification_id` INT NOT NULL AUTO_INCREMENT ,
   `riskclassification_name` VARCHAR(45) NULL ,
   PRIMARY KEY (`riskclassification_id`) )
@@ -685,11 +683,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_risks`
+-- Table `tb_risks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_risks` ;
+DROP TABLE IF EXISTS `tb_risks` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_risks` (
+CREATE  TABLE IF NOT EXISTS `tb_risks` (
   `risk_id` INT NOT NULL AUTO_INCREMENT ,
   `risk_reportDate` DATETIME NULL ,
   `risk_description` TEXT NULL ,
@@ -708,11 +706,11 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_todolist`
+-- Table `tb_todolist`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_todolist` ;
+DROP TABLE IF EXISTS `tb_todolist` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_todolist` (
+CREATE  TABLE IF NOT EXISTS `tb_todolist` (
   `todolist_id` INT NOT NULL AUTO_INCREMENT ,
   `todolist_position` INT NOT NULL DEFAULT 0 ,
   `todolist_text` VARCHAR(255) NOT NULL DEFAULT '' ,
@@ -724,11 +722,11 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `celestic`.`tb_emails`
+-- Table `tb_emails`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `celestic`.`tb_emails` ;
+DROP TABLE IF EXISTS `tb_emails` ;
 
-CREATE  TABLE IF NOT EXISTS `celestic`.`tb_emails` (
+CREATE  TABLE IF NOT EXISTS `tb_emails` (
   `email_id` INT NOT NULL AUTO_INCREMENT ,
   `email_subject` VARCHAR(80) NOT NULL ,
   `email_body` TEXT NOT NULL ,
@@ -741,6 +739,9 @@ CREATE  TABLE IF NOT EXISTS `celestic`.`tb_emails` (
   PRIMARY KEY (`email_id`) )
 ENGINE = MyISAM;
 
+-- -----------------------------------------------------
+-- Setup for update from 0.3.x to 0.4.0
+-- ----------------------------------------------------- 
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

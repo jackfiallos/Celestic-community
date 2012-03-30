@@ -1,18 +1,18 @@
 <?php
 return array(
 	// VIEWS
-	'CalendarTitle' => 'Calendar Events',
-	'UpcomingMilestonesTitle' => 'Upcoming Milestones',
-	'ProjectsProgressTitle' => 'Projects Progress',
-	'OverdueMilestonesTitle' => 'Overdue Milestones',
-	'MyProjectsTitle' => 'My Projects',
-	'RecentActivityTitle' => 'Recent Activity',
-	'TasksToDoTitle' => 'Task ToDo',
-	'InvoicesStatisticsTitle' => 'Invoices Statistics',
-	'HelpResourcesTitle' => 'Tasks Status',
-	'EmailNotificationsTitle' => 'Email Notifications',
-	'RecentDocumentsTitle' => 'Recent Documents',
-	'EffortDistribution' => 'Effort Distribution',
-	'ViewAll' => 'View All',
+	'CalendarTitle' => 'Calend&aacute;rio de Eventos',
+	'UpcomingMilestonesTitle' => 'Etapas Pr&oacute;ximas',
+	'ProjectsProgressTitle' => 'Progresso de Projetos',
+	'OverdueMilestonesTitle' => 'Etapas Atrasadas',
+	'MyProjectsTitle' => 'Meus Projetos',
+	'RecentActivityTitle' => 'Atividade Recente',
+	'TasksToDoTitle' => 'Tarefas a fazer',
+	'InvoicesStatisticsTitle' => 'Fatura&ccedil;&atilde;o',
+	'HelpResourcesTitle' => 'Status de tarefas',
+	'EmailNotificationsTitle' => 'Notifica&ccedil;&otilde;es',
+	'RecentDocumentsTitle' => 'Documentos Recentes',
+	'EffortDistribution' => 'Distribui&ccedil;&atilde;o de Esfor&ccedil;o',
+	'ViewAll' => 'Ver Todos',
 );
 ?>

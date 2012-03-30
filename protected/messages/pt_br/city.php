@@ -1,11 +1,11 @@
 <?php
 return array(
 	// MODEL
-	'city_id' => 'City',
-	'city_name' => 'City Name',
-	'city_code' => 'City Code',
-	'city_district' => 'City District',
-	'city_population' => 'City Population',
-	'country_id' => 'Country',
+	'city_id' => 'Cidade',
+	'city_name' => 'Nome da Cidade',
+	'city_code' => 'C&oacute;digo da Cidade',
+	'city_district' => 'Distrito',
+	'city_population' => 'Popula&ccedil;&atilde;o',
+	'country_id' => 'Pa&iacute;s',
 );
 ?>

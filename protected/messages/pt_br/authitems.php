@@ -1,20 +1,20 @@
 <?php
 return array(
 	// MODEL
-	'name' => 'Name',
-	'type' => 'Type',
-	'description' => 'Description',
+	'name' => 'Nome',
+	'type' => 'Tipo',
+	'description' => 'Descri&ccedil;&atilde;o',
 	'bizrule' => 'Bizrule',
-	'data' => 'Data',
-	'account_id' => 'Account',
+	'data' => 'Dados',
+	'account_id' => 'Conta',
 	// FIELDS
-	'createRoles' => 'Create New Role',
-	'FieldsRequired' => '<p class="note stick">Fields with <span class="required">*</span> are required.</p>',
-	'userList' => 'User List',
-	'appRoles' => 'Defined Roles',
-	'pleaseSelectUsertoViewRol' => 'Select one user to view his roles',
-	'pleaseSelectRoletoViewTask' => 'Select one role to view his tasks',
-	'roles' => 'Roles',
-	'modules' => 'Modules',
+	'createRoles' => 'Criar Novo Papel',
+	'FieldsRequired' => '<p class="note stick">Campos marcados com <span class="required">*</span> s&atilde;o obrigat&oacute;rios.</p>',
+	'userList' => 'Lista de Usu&aacute;rios',
+	'appRoles' => 'Pap&eacute;is Definidos',
+	'pleaseSelectUsertoViewRol' => 'Selecione um usu&aacute;rio para ver seus pap&eacute;is',
+	'pleaseSelectRoletoViewTask' => 'Selecione um papel para ver suas tarefas',
+	'roles' => 'Pap&eacute;is',
+	'modules' => 'M&oacute;dulos',
 );
 ?>

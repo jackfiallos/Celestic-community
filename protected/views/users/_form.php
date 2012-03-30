@@ -41,7 +41,9 @@
 					<span>
 						<?php
 							echo $form->passwordField($model,'user_password',array('value'=>'','class'=>'betterform','style'=>'width:95%','maxlength'=>20,'tabindex'=>5,'disabled'=>(!$model->isNewRecord)));
-							echo CHtml::label(CHtml::link(Yii::t('users','FieldPasswordUnlock'),'#',array('class'=>'unlock')), CHtml::activeId($model, 'user_password'), array('class'=>'labelhelper'));
+						?>
+						<?php 
+							if(!$model->isNewRecord) echo CHtml::label(CHtml::link(Yii::t('users','FieldPasswordUnlock'),'#',array('class'=>'unlock')), CHtml::activeId($model, 'user_password'), array('class'=>'labelhelper'));
 						?>
 					</span>
 				</div>
@@ -189,15 +191,12 @@
 </div><!-- form -->
 
 <?php
-	Yii::app()->clientScript->registerCoreScript('jquery');
-	Yii::app()->clientScript->registerScript('jQueryUnblock','
-		$(document).ready(function() {
-			// Close notification
-			$(\'.unlock\').click(function (e) {
-				e.stopPropagation();
-				var el = $(this).parents("label").prev();
-				(el.attr("disabled") == true) ? el.removeAttr("disabled").next().children(":first").text("'.Yii::t('users','FieldPasswordLock').'") : el.attr("disabled","disabled").next().children(":first").text("'.Yii::t('users','FieldPasswordUnlock').'");
-			});
-		});
-	');
+Yii::app()->clientScript->registerCoreScript('jquery');
+Yii::app()->clientScript->registerScript('jQueryUnblock',"
+	$('.unlock').click(function(e) {
+		e.preventDefault();
+		var el = $(this).parent().prev();
+		(el.attr('disabled') == 'disabled') ? el.removeAttr('disabled').next().children(':first').text('".Yii::t('users','FieldPasswordLock')."') : el.attr('disabled','disabled').next().children(':first').text('".Yii::t('users','FieldPasswordUnlock')."');
+	});
+");
 ?>

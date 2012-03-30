@@ -4,14 +4,13 @@
 	{
 		$this->Widget('application.extensions.highcharts.HighchartsWidget', array(
 		   'options'=>array(
-				'credits' => array(
-					'enabled' => false
-				),
+				'credits' => array('enabled' => false),
+				'exporting' => array('enabled' => false),
 				'chart'=>array(
 					'height' => '300',
-					'marginRight'=> 130,
+					//'marginRight'=> 130
 				),
-				'title' => array('text' => ''),
+				'title' => array('text' => null),
 				'plotArea' => array(
 					'shadow' => null,
 					'borderWidth' => null,
@@ -19,7 +18,7 @@
 				),
 				'tooltip' => array(
 					'formatter' => 'js:function(){
-						return "<b>"+ this.point.name +"</b>: "+ this.y +"%";
+						return "<b>"+ this.point.name +"</b>: "+ Math.round(this.percentage) +"%";
 					}',
 				),
 				'plotOptions' => array(	
@@ -27,11 +26,7 @@
 						'allowPointSelect' => true,
 						'cursor' => 'pointer',
 						'dataLabels' => array(
-							'enabled' => true,
-							'color' => '#353535',
-							'formatter' => 'js:function(){
-								return "<b>"+ this.y +"%</b>";
-							}',
+							'enabled' => false
 						),
 						'showInLegend' => true
 					),
@@ -45,9 +40,9 @@
 				'series' => array(
 					array(
 						'type'=>'pie',
-						'name'=>'BR SH',
+						//'name'=>'BR SH',
 						'data'=>$this->seriesStages,
-						'size'=>220,
+						'size'=>180,
 					),
 				),
 			)

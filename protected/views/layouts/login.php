@@ -25,7 +25,7 @@
 				<ul class="icons">
 					<li>
 						<a href="http://qbit.com.mx/labs/celestic" title="Celestic Homepage" rel="external">
-							<?php echo CHtml::image(Yii::app()->request->baseUrl."/favicon.png","Homepage");?>
+							<?php echo CHtml::image(Yii::app()->request->baseUrl."/favicon.png","Homepage",array('width'=>'28px','height'=>'28px'));?>
 						</a>
 					</li>
 					<li>
@@ -51,9 +51,11 @@
 				</ul>
 			</div>
 			<ul>
-				<li class="language"><?php echo CHtml::link('Espa&ntilde;ol', Yii::app()->createUrl(Yii::app()->request->getParam('r','site/login'),array('lc'=>'es_mx')), array('title'=>'Espanol')); ?></li>
-				<li class="language"><?php echo CHtml::link('Portugues', Yii::app()->createUrl(Yii::app()->request->getParam('r','site/login'),array('lc'=>'pt_br')), array('title'=>'Portugues')); ?></li>
-				<li class="language"><?php echo CHtml::link('English', Yii::app()->createUrl(Yii::app()->request->getParam('r','site/login'),array('lc'=>'en_us')), array('title'=>'English')); ?></li>
+				<li class="language"><?php echo CHtml::link('Espa&ntilde;ol-MX', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'es_mx'))), array('title'=>'Español México')); ?></li>
+				<li class="language"><?php echo CHtml::link('Portugues', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'pt_br'))), array('title'=>'Português')); ?></li>
+				<li class="language"><?php echo CHtml::link('English', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'en_us'))), array('title'=>'English')); ?></li>
+				<li class="language"><?php echo CHtml::link('Espa&ntilde;ol-ES', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'es_es'))), array('title'=>'Español España')); ?></li>
+				<li class="language"><?php echo CHtml::link('Deutsch', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'de_de'))), array('title'=>'Deutsch')); ?></li>
 			</ul>
 			<div class="mod footerRibbon"> 
 				Developed by <a href="http://qbit.com.mx" rel="external" title="Qbit Mexhico">Qbit Mexhico</a><br />

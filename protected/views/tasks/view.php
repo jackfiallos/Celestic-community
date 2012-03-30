@@ -11,11 +11,19 @@ Yii::app()->clientScript->registerCoreScript('jquery.ui');
 ?>
 <div class="portlet x9">
 	<div class="portlet-content">
-		<h1 class="ptitleinfo tasks"><?php echo $model->task_name; ?>
-			<span class="priority pr<?php echo CHtml::encode($model->task_priority); ?>">
-				<?php echo Tasks::getNameOfTaskPriority($model->task_priority); ?>
-			</span>
-		</h1>
+		<div class="grid_8">
+			<h1 class="ptitleinfo tasks">
+				<?php echo $model->task_name; ?>
+			</h1>
+		</div>
+		<div class="grid_4">
+			<h1 class="prtribbon">
+				<span class="priority pr<?php echo CHtml::encode($model->task_priority); ?>">
+					<?php echo Tasks::getNameOfTaskPriority($model->task_priority); ?>
+				</span>
+			</h1>
+		</div>
+		<div class="clear">&nbsp;</div>
 		<div class="button-group portlet-tab-nav">
 			<?php echo CHtml::link(Yii::t('tasks', 'ListTasks'), Yii::app()->controller->createUrl('index'),array('class'=>'button primary')); ?>
 			<?php echo CHtml::link(Yii::t('tasks', 'CreateTasks'), Yii::app()->controller->createUrl('create'),array('class'=>'button')); ?>

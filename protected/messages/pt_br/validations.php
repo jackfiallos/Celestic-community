@@ -1,20 +1,20 @@
 <?php
 return array(
 	// VIEWS
-	'TitleValidations' => 'Validations',
-	'CreateValidations' => 'Create Validation',
-	'UpdateValidations' => 'Update Validation',
-	'FieldsRequired' => '<p class="note stick">Fields with <span class="required">*</span> are required.</p>',
+	'TitleValidations' => 'Valida&ccedil;&otilde;es',
+	'CreateValidations' => 'Criar Valida&ccedil;&atilde;o',
+	'UpdateValidations' => 'Atualizar Valida&ccedil;&atilde;o',
+	'FieldsRequired' => '<p class="note stick">Campos com <span class="required">*</span> s&atilde;o obrigat&oacute;rios.</p>',
 	// MODEL
-	'validation_id' => 'Validation',
-	'validation_field' => 'Field',
-	'validation_description' => 'Description',
-	'case_id' => 'Case',
+	'validation_id' => 'Valida&ccedil;&atilde;o',
+	'validation_field' => 'Campo',
+	'validation_description' => 'Descri&ccedil;&atilde;o',
+	'case_id' => 'Caso',
 	// FORMS
-	'FormValidationField' => 'Field form related',
-	'FormValidationDescription' => 'Description needed to complete validation',
-	'FormValidationCase' => 'Case',
+	'FormValidationField' => 'Campo de formul&aacute;rio relacionado',
+	'FormValidationDescription' => 'Descri&ccedil;&atilde;o necess&aacute;ria para completar a valida&ccedil;&atilde;o',
+	'FormValidationCase' => 'Caso',
 	// FIELDS
-	'selectOption' => 'Select an Option',
+	'selectOption' => 'Selecione uma op&ccedil;&atilde;o',
 );
 ?>

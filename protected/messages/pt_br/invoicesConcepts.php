@@ -1,21 +1,21 @@
 <?php
 return array(
 	// VIEWS
-	'TitleInvoiceConcepts' => 'Invoice Concepts',
-	'ConceptSavedSuccessfully' => 'New concept was created successfully',
+	'TitleInvoiceConcepts' => 'Conceito de Fatura',
+	'ConceptSavedSuccessfully' => 'Novo conceito criado com sucesso',
 	// FIELDS
-	'FieldCreate' => 'Create Concept',
-	'FieldUpdate' => 'Update Concept',
-	'FieldList' => 'List Concepts',
+	'FieldCreate' => 'Criar Conceito',
+	'FieldUpdate' => 'Atualizar Conceito',
+	'FieldList' => 'Listar Conceitos',
 	// FORMS
-	'FormInvoicesConcept_quantity' => 'Type concept quantity',
-	'FormInvoicesConcept_amount' => 'Type amount or value for this item',
-	'FormInvoicesConcept_description' => 'Product description',
+	'FormInvoicesConcept_quantity' => 'Digite a quantidade do produto',
+	'FormInvoicesConcept_amount' => 'Digite o valor do produto',
+	'FormInvoicesConcept_description' => 'Digite a descri&ccedil;&atilde;o do produto',
 	// MODEL
-	'FieldConceptId' => 'Concept',
-	'FieldQuantity' => 'Quantity',
-	'FieldDescription' => 'Description',
-	'FieldAmount' => 'Amount',
-	'FieldIdInvoices' => 'Invoice',
+	'FieldConceptId' => 'Conceito',
+	'FieldQuantity' => 'Quantidade',
+	'FieldDescription' => 'Descri&ccedil;&atilde;o',
+	'FieldAmount' => 'Montante',
+	'FieldIdInvoices' => 'Fatura',
 );
 ?>

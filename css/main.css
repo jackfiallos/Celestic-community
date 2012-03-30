@@ -201,7 +201,7 @@ div.portlet-contentActivity {
 	padding:5px 8px;
 }
 
-div.logactivity span.bac{
+div.logactivity span.bac, span.bac{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
@@ -422,7 +422,6 @@ ul#gallery li a.deleteUser:hover {
 
 /** Pages Title **/
 .ptitleinfo {
-	border-bottom:1px dotted #CCCCCC;
 	clear:both;
 	display:inline-block;
 	margin:25px 0 5px;
@@ -637,6 +636,12 @@ span.priority, div.priority{
 	-khtml-border-radius: 4px;
 }
 
+.prtribbon {
+	display:block;
+	padding-top:30px;
+	text-align:center;
+}
+
 span.pr0, div.pr0 {
 	background:#F0A830;
 }
@@ -699,7 +704,7 @@ span.st6, div.st6, li.st6 {
 }
 
 span.st7, div.st7, li.st7 {
-	background:#EDF257;
+	background:#b5b5b5;
 	color: #000 !important;
 }
 
@@ -1049,29 +1054,17 @@ a.icon-menu span {
 /** COMMENTS PER POST **/
 .jewelCount {
     color: #FFFFFF;
-    display: block;
-    font-size: 11px;
-    font-weight: bold;
-    padding-bottom: 1px;
-    position: absolute;
-    bottom: -25px;
-	border:1px solid #FFF;
-    z-index: 101;
-}
-
-.jewelCount span {
-	padding-right: 1px;
-	text-decoration: none;
-    background-color: #F03D25;
-    display: block;
-    padding: 0 3px 0 3px;
-	-moz-border-radius: 3px;
+    font-size: 12px;
+    font-weight:bold;    
+    -moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	-khtml-border-radius: 3px;
+	padding: 3px;
+	background-color: #F03D25;
 }
 
-.jewelCount #jewelRequestCount a, a.commentsview {
+.jewelCount a, a.commentsview {
 	color: #fff;
 	text-decoration: none;
 }

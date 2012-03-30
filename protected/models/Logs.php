@@ -145,7 +145,7 @@ class Logs extends CActiveRecord
 			$projectList = array(-1);
 		
     	return Logs::model()->with('Module')->findAll(array(
-			'condition'=>'t.project_id <> 0 AND t.project_id IN ('.implode(",", $projectList).')', //AND Module.module_name LIKE ("'.$module.'")',
+			'condition'=>'t.log_activity NOT LIKE "%Comment%" AND t.project_id <> 0 AND t.project_id IN ('.implode(",", $projectList).')', //AND Module.module_name LIKE ("'.$module.'")',
 			'params'=>array(
 				':module_name'=>$module,
 				':project_id'=>implode(",", $projectList),
@@ -179,8 +179,6 @@ class Logs extends CActiveRecord
 	
 	private function sendEmailAlert($attributes)
 	{
-		//Yii::import('application.extensions.phpMailer.yiiPhpMailer');
-		
 		$recipients = Users::model()->with('Companies.Projects')->findAll(array(
 			'condition'=>'Projects.project_id = '.$attributes['project_id'],
 			'together' => true,
@@ -211,7 +209,7 @@ class Logs extends CActiveRecord
 	
 	public function getCountComments($module_name, $resource_id)
 	{
-		//get_class($this)		
+		//get_class($this)
 		$criteria=new CDbCriteria;
 		$criteria->compare('module_name',$module_name);
 		$module_id = Modules::model()->find($criteria)->module_id;

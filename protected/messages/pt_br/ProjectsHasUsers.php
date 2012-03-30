@@ -1,7 +1,7 @@
 <?php
 return array(
-	'project_id' => 'Project',
-	'user_id' => 'Users',
-	'client_id' => 'Clients',
+	'project_id' => 'Projeto',
+	'user_id' => 'Usu&aacute;rios',
+	'client_id' => 'Clientes',
 );
 ?>

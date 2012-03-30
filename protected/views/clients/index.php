@@ -18,7 +18,7 @@ $this->pageTitle = Yii::app()->name." - ".Yii::t('clients', 'TitleClients');
 			$this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'itemView'=>'_view',
-				'template'=>'{items}',
+				//'template'=>'{items}',
 				'summaryText'=>'',
 				'itemsCssClass'=>'people-listing',
 			));

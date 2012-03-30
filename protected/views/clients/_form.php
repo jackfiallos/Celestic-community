@@ -176,15 +176,12 @@
 </div><!-- form -->
 
 <?php
-	Yii::app()->clientScript->registerCoreScript('jquery');
-	Yii::app()->clientScript->registerScript('jQueryUnblock','
-		$(document).ready(function() {
-			// Close notification
-			$(\'.unlock\').click(function (e) {
-				e.stopPropagation();
-				var el = $(this).parents("label").prev();
-				(el.attr("disabled") == true) ? el.removeAttr("disabled").next().children(":first").text("click here to lock and change the password") : el.attr("disabled","disabled").next().children(":first").text("click here to unlock and change the password");
-			});
-		});
-	');
+Yii::app()->clientScript->registerCoreScript('jquery');
+Yii::app()->clientScript->registerScript('jQueryUnblock',"
+	$('.unlock').click(function(e) {
+		e.preventDefault();
+		var el = $(this).parent().prev();
+		(el.attr('disabled') == 'disabled') ? el.removeAttr('disabled').next().children(':first').text('".Yii::t('users','FieldPasswordLock')."') : el.attr('disabled','disabled').next().children(':first').text('".Yii::t('users','FieldPasswordUnlock')."');
+	});
+");
 ?>

@@ -18,7 +18,7 @@ $cs->registerCssFile(Yii::app()->request->baseUrl.'/css/menu.css');
 		<?php endif;?>
 		<?php if(Yii::app()->user->checkAccess('viewBudgets')): ?>
 		<div class="subcolumns">
-			<div class="c66l">
+			<div class="c50l">
 				<?php
 				$this->widget('zii.widgets.CDetailView', array(
 					'data'=>$model,
@@ -47,7 +47,7 @@ $cs->registerCssFile(Yii::app()->request->baseUrl.'/css/menu.css');
 				));
 				?>
 			</div>
-			<div class="c33r" style="text-align:center">
+			<div class="c50r" style="text-align:center">
 				<div class="avcash section">
 					<div class="sidebar-box">
 						<div class="sidebar-box-wrap">

@@ -10,7 +10,7 @@
  * This is the production Web application configuration
  *
  **/
-
+error_reporting(0);
 // Load main config file
 $main = include_once('main.php'); 
  

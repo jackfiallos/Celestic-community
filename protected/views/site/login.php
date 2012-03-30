@@ -1,8 +1,7 @@
 <?php $this->pageTitle = Yii::app()->name." - Project Manager"; ?>
 <h2 class="login">
-	<?php echo Yii::app()->name; ?>
+	<?php echo CHtml::image(Yii::app()->request->baseUrl."/images/celestic.png",CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']); ?>
 </h2>
-<h3><?php echo Yii::t('site','Login');?></h3>
 <?php
 $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',

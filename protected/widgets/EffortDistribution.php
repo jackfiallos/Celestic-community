@@ -37,8 +37,17 @@ class EffortDistribution extends CPortlet
 		$criteria->group = "Stage.taskStage_id";
 		$countStages = Tasks::model()->with('Projects','Stage')->together()->findAll($criteria);
 
+		$totalTareas = 0;
 		foreach($countStages as $key)
-			$this->seriesStages[] = array($key->Stage->taskStage_name, intval($key->total));
+			$totalTareas += intval($key->total);
+		
+		foreach($countStages as $key){
+			$this->seriesStages[] = array($key->Stage->taskStage_name, round((intval($key->total)/$totalTareas)*100));
+		}
+			
+		/*echo "<pre>";
+		print_r($this->seriesStages);
+		die("</pre>");*/
 		
 		//return $this->seriesStages;
 	}

@@ -245,23 +245,23 @@ class UsersController extends Controller
 		{
 			$allowEdit = false;
 			$model=$this->loadModel();
+			$tmppw = $model->user_password;
 			if (!empty($model->address_id))
 				$address = Address::model()->findByPk($model->address_id);
 			else
 				$address = new Address;
 			
 			$userManager = Yii::app()->user->IsManager;
-			if (($model->user_id == Yii::app()->user->id) || ($userManager)) {
+			if (($model->user_id == Yii::app()->user->id) || ($userManager) || Yii::app()->user->IsAdministrator) {
 				$allowEdit = true;
 			}
 
 			if(isset($_POST['Users']) && isset($_POST['Address']))
 			{			
-				$tmppw = $model->user_password;
 				$model->attributes=$_POST['Users'];
 				$address->attributes = $_POST['Address'];
 				
-				if (($tmppw != $model->user_password) && (!empty($model->user_password)))
+				if (isset($_POST['Users']['user_password']))
 					$model->user_password = md5($model->user_password);
 					
 				$valid = $address->validate();

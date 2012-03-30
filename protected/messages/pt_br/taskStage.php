@@ -1,11 +1,11 @@
 <?php
 return array(
-	'analysis' => 'Analysis',
+	'analysis' => 'An&aacute;lise',
 	'design' => 'Design',
-	'development' => 'Development',
-	'testing' => 'Testing',
-	'documentation' => 'Documentation',
-	'evolution' => 'Evolution',
-	'finalization' => 'Finalization',
+	'development' => 'Desenvolvimento',
+	'testing' => 'Testes',
+	'documentation' => 'Documenta&ccedil;&atilde;o',
+	'evolution' => 'Evolu&ceedil;&atilde;o',
+	'finalization' => 'Finaliza&ccedil;&atilde;o',
 );
 ?>

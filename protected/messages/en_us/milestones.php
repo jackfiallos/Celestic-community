@@ -30,7 +30,7 @@ return array(
 	'selectOption' => 'Select an Option',
 	'RelatedCases' => 'Related Cases',
 	'RelatedTasks' => 'Related Tasks',
-	'DueDateError' => 'Due date should be created before Project Start date or after the Project Due date',
-	'StartDateError' => 'Due date should be created before Project Start date or after the Project Due date',
+	'DueDateError' => '<b>Due date</b> should be created after Project Start date or before the Project Due date.<br />Please check Project start and end dates.',
+	'StartDateError' => '<b>Start date</b> should be created after Project Start date or before the Project Due date.<br />Please check Project start and end dates.',
 );
 ?>

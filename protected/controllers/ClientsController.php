@@ -242,6 +242,9 @@ class ClientsController extends Controller
 			
 			// find client user data
 			$modelUsers = Users::model()->together()->findByPk($model->user_id);
+
+			// current user password
+			$tmppw = $modelUsers->user_password;
 			
 			// if client hasn't address create an Address object, else load
 			if (!empty($model->address_id))
@@ -260,11 +263,8 @@ class ClientsController extends Controller
 					// set form elements to Address model attributes
 					$address->attributes = $_POST['Address'];
 					
-					// current user password
-					$tmppw = $modelUsers->user_password;
-					
 					// if current password is different to new password
-					if (($tmppw != $modelUsers->user_password) && (!empty($modelUsers->user_password)))
+					if (isset($_POST['Users']['user_password']))
 						$modelUsers->user_password = md5($modelUsers->user_password);
 					
 					// validate both models

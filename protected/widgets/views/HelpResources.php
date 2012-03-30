@@ -5,7 +5,8 @@ if ($countTasks > 0):
 <table>
 	<tbody>
 <?php
-foreach($this->getActivityGroupedByTask() as $task):
+$tasks = $this->getActivityGroupedByTask();
+foreach($tasks as $task):
 $numstatus = isset($task->numstatus) ? $task->numstatus : 0;
 if ($numstatus>0):
 ?>

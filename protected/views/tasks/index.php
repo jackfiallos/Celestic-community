@@ -19,7 +19,7 @@ $dataProvider = $model->search();
 			<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/images/gridview.png', ''), Yii::app()->controller->createUrl('index',array('view'=>'grid'))); ?>
 			<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/images/kanban.png', ''), Yii::app()->controller->createUrl('index',array('view'=>'kanban'))); ?>
 		</span>
-		<div class="search-form corners">
+		<div class="search-form corners" style="display:none;">
 		<?php
 			$this->renderPartial('_search',array(
 				'model'=>$model,

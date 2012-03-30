@@ -115,6 +115,7 @@ class CommentsController extends Controller
 			// set module_id finded to model
 			$model->module_id = $module->module_id;
 			$project = Yii::app()->user->getState('project_selected');
+			$model->project_id = $project;
 			
 			// validate and save
 			if($model->save())

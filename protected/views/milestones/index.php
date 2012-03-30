@@ -13,7 +13,7 @@ $this->pageTitle = Yii::app()->name." - ".Yii::t('milestones', 'TitleMilestones'
 		</div>
 		<?php if($model->ItemsCount > 0):?>
 		<?php echo CHtml::link(Yii::t('milestones', 'AdvancedSearch'),'#',array('class'=>'search-button')); ?>
-		<div class="search-form corners" style="display:block;">
+		<div class="search-form corners" style="display:none;">
 		<?php
 			$this->renderPartial('_search',array(
 				'model'=>$model,

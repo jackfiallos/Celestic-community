@@ -58,11 +58,10 @@ body {
 	padding: 24px 54px 0;
 }
 .container h2.login {
-	margin: 0 0 10px 0;
-	height: 37px;
+	margin: -35px 0 10px 0;
+	height: 100px;
 	font-size:30px;
 	text-align:center;
-	margin-top: -10px;
 }
 .container p {
 	margin: 0 0 1.5em;

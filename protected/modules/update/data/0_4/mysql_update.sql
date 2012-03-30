@@ -1,0 +1,8 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+/*ALTER TABLE `celestic`.`tb_comments` DROP COLUMN `project_id`;*/
+
+ALTER TABLE `tb_comments` ADD COLUMN `project_id` INT(11) NULL DEFAULT NULL  AFTER `user_id` 
+, ADD INDEX `fk_tb_comments_tb_projects1` (`project_id` ASC) ;

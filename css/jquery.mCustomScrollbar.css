@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+/* some custom fonts via google font api */
+/*@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:extralight);*/
+
+/* content block 3 */
+.mcs3_container{ height:400px; }
+.mcs3_container .customScrollBox{position:relative; height:100%; overflow:hidden;}
+.mcs3_container .customScrollBox .container{position:relative; top:0; float:left;}
+.mcs3_container .customScrollBox .content{clear:both;}
+.mcs3_container .customScrollBox .content p{padding:10px 5px 10px 15px; margin:0; color:#31231E; font-family:Verdana, Geneva, sans-serif; font-size:13px; line-height:20px;}
+.mcs3_container .customScrollBox img{border:3px solid #31231E; margin:0 0 0 15px;}
+.mcs3_container .dragger_container{position:relative; width:0px; height:95%; float:left; margin:2px 0 0 1px; border-left:1px solid #548da5; border-right:1px solid #548da5; cursor:pointer}
+.mcs3_container .dragger{position:absolute; width:6px; height:60px; background:#808080; margin-left:-3px; overflow:hidden; cursor:pointer; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}
+.mcs3_container .dragger_pressed{position:absolute; width:9px; height:60px; background:#548da5; margin-left:-5px; overflow:hidden; cursor:pointer; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}

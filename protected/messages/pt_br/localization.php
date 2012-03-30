@@ -1,24 +1,24 @@
 <?php
 return array(
 	// VIEWS
-	'TitleLocalization' => 'Regional Configuration',
-	'FieldsRequired' => '<p class="note">Fields with <span class="required">*</span> are required.</p>',
-	'TimezomeSelection' => 'Timezome Selection',
-	'DateTimeFormat' => 'Date and Time format',
-	'UpdatedMessage' => 'All the changes was saved correctly',
+	'TitleLocalization' => 'Configura&ccedil;&atilde;o Regional',
+	'FieldsRequired' => '<p class="note">Campos com <span class="required">*</span> s&atilde;o obrigat&oacute;rios.</p>',
+	'TimezomeSelection' => 'Sele&ccedil;&atilde;o do fuso hor&aacute;rio',
+	'DateTimeFormat' => 'Formato de data e hora',
+	'UpdatedMessage' => 'As mudanças foram salvas com sucesso',
 	// MODEL
-	'timezone' => 'Time Zone',
-	'timeformat' => 'Time Format',
-	'dateformat' => 'Date Format',
-	'account_id' => 'Account',
+	'timezone' => 'Fuso Hor&aacute;rio',
+	'timeformat' => 'Formato de Hora',
+	'dateformat' => 'Formato de Data',
+	'account_id' => 'Conta',
 	// FORMS
-	'FormTimezoneTimezone' => 'Timezone where you live',
-	'FormTimezoneDateformat' => 'Date format prefered to show dates',
-	'FormTimezoneTimeFormat' => 'Time format prefered to show time',
+	'FormTimezoneTimezone' => 'Fuso hor&aacute;rio de onde voc&ecirc; vive',
+	'FormTimezoneDateformat' => 'Formato de data preferido',
+	'FormTimezoneTimeFormat' => 'Formato de hora preferido',
 	// FIELDS
-	'selectOption' => 'Select an Option',
-	'timezoneRequired'=>'Field <b>Time Zone</b> is required',
-	'dateformatRequired'=>'Field <b>Date Format</b> is required',
-	'timeformatRequired'=>'Field <b>Time Format</b> is required',
+	'selectOption' => 'Selecione uma op&ccedil;&atilde;o',
+	'timezoneRequired'=>'Campo <b>Fuso Hor&aacute;rio</b> &eacute; obrigat&oacute;rio',
+	'dateformatRequired'=>'Campo <b>Formato de Data</b> &eacute; obrigat&oacute;rio',
+	'timeformatRequired'=>'Campo <b>Formato de Hora</b> &eacute; obrigat&oacute;rio',
 );
 ?>

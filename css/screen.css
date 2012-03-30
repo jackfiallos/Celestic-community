@@ -487,6 +487,10 @@ body{
     position: relative;
 }
 
+.portlet-content a {
+ 	overflow:hidden;
+}
+
 .portlet-content li {
 	list-style-type: none;
 }

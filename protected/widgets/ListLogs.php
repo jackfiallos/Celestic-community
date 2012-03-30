@@ -41,11 +41,9 @@ class ListLogs extends CPortlet
 		if (empty($project_idSelected))
 		{
 			$projectList = array();
-			$Projects = Projects::model()->findMyProjects(Yii::app()->user->id);
+			$Projects = Yii::app()->user->getProjects();
 			foreach($Projects as $project)
-			{
 				array_push($projectList,$project->project_id);
-			}
 		}
 		
 		return Logs::model()->findActivity(

@@ -9,7 +9,7 @@
 		<?php
 			echo CHtml::image(Yii::app()->request->baseUrl.'/images/icons/milestonesoverd-12.png')."&nbsp;";
 			echo CHtml::link(CHtml::encode($milestone->milestone_title), Yii::app()->createUrl("milestones/view",array("id"=>$milestone->milestone_id)), array('style'=>'color:#9F0000;'))."<br />";
-			echo ECHtml::word_split(CHtml::encode($milestone->milestone_description),6)."...";
+			echo ECHtml::word_split(CHtml::encode($milestone->milestone_description),9)."...";
 		?>
 	</div>
 	<br />

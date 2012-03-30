@@ -208,20 +208,20 @@ class Projects extends CActiveRecord
 	
 	public function findMyProjects($userId)
     {
-    	/*$projects = Projects::model()->with('Company.Cusers')->together()->findAll(array(
-			'condition'=>'Cusers.user_id = :user_id AND t.project_active = 1 AND 1=1',
+    	$projects = Projects::model()->with('Company.Cusers')->together()->findAll(array(
+			'condition'=>'Cusers.user_id = :user_id AND t.project_active = 1',
 			'params'=>array(
 				':user_id' => $userId,
 			),
 			'group'=>'t.project_id',
-		));*/
-    	$projects = Projects::model()->with('Users')->together()->findAll(array(
+		));
+    	/*$projects = Projects::model()->with('Users')->together()->findAll(array(
     		'condition'=>'Users.user_id = :user_id',
     		'params'=>array(
     			':user_id' => $userId,
     		),
     		'group'=>'t.project_id',
-    	));
+    	));*/
 		
 		if (count($projects)<=0)
 			return array();
@@ -256,9 +256,10 @@ class Projects extends CActiveRecord
 	
 	public function getProjectProgress($project_id)
 	{
+		// ( total_tasks_per_status / total_tasks ) / status_value
 		$criteria = new CDbCriteria;
-		$criteria->select = '(SUM(Status.status_value)/COUNT(t.task_id)) as progress';
-		$criteria->condition = 't.project_id = :project_id';
+		$criteria->select = '(ROUND((COUNT(t.task_id)/(SELECT COUNT(*) FROM tb_tasks tb WHERE tb.project_id = :project_id))*Status.status_value)) AS progress';
+		$criteria->condition = 't.project_id = :project_id AND 200=200';
 		$criteria->params = array(
 			':project_id' => $project_id,
 		);

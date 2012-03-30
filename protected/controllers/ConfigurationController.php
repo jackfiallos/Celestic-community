@@ -753,7 +753,7 @@ class ConfigurationController extends Controller
 		// check if user has permissions to permissionsConfiguration and user is account administrator
 		if((Yii::app()->user->checkAccess('permissionsConfiguration')) && Yii::app()->user->IsAdministrator)
 		{				
-			$project = Projects::model()->findByPk(Yii::app()->request->getParam("id",0));
+			$project = Projects::model()->findByPk($_POST['id']);
 			if ($project !== null)
 			{
 				$projectList = Yii::app()->user->getProjects();
@@ -762,11 +762,13 @@ class ConfigurationController extends Controller
 					array_push($arr_prj, $prj->project_id);
 				if (in_array($project->project_id, $arr_prj))
 				{
-					$project->project_active = !$project->project_active;
+					$project->project_active = ($project->project_active == 0) ? 1 : 0;
 					$project->save(false);
+					echo CJSON::encode(array('changed'=>true));
 				}
+				else
+					echo CJSON::encode(array('error'=>'Project Lists'));
 			}
-			
 			Yii::app()->end();
 		}
 		else

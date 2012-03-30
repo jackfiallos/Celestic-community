@@ -1,11 +1,11 @@
 <?php
 return array(
-	'pending' => 'Pending',
-	'revised' => 'To Review',
-	'cancelled' => 'Cancelled',
-	'accepted' => 'Accepted',
-	'closed' => 'Closed',
-	'totest' => 'To Test',
-	'inprogress' => 'In Progress',
+	'pending' => 'Pendente',
+	'revised' => 'Por Revisar',
+	'cancelled' => 'Cancelar',
+	'accepted' => 'Aceito',
+	'closed' => 'Fechado',
+	'totest' => 'Por Testar',
+	'inprogress' => 'Em Progresso',
 );
 ?>

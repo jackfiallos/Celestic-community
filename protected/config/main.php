@@ -55,6 +55,10 @@ $main = array(
                     'themeUrl' => 'css',
                     'theme' => 'redmond',
                 ),
+		'CJuiAutoComplete' => array(
+                    'themeUrl' => 'css',
+                    'theme' => 'redmond',
+                ),
                 'CJuiDatePicker' => array(
                     'themeUrl' => 'css',
                     'theme' => 'redmond',
@@ -82,7 +86,7 @@ $main = array(
             'enableCsrfValidation' => true,
         ),
 		'urlManager'=>array(
-			//'urlFormat'=>'path',
+			'urlFormat'=>'get',
 			'showScriptName'=>false,
 			'caseSensitive'=>false,
 			'rules'=>array(
@@ -104,14 +108,15 @@ $main = array(
 	),
 	
 	'modules'=>array(
-        'install',
+	        'install',
+		'update'
 	),
 	
 	// application parameters
 	'params'=>array(
 		// App parameters
-		'appVersion'=>'0.3.5',
-		'lastAppVersion'=>'0.2.9',
+		'appVersion'=>'0.4.0',
+		'lastAppVersion'=>'0.3.5',
 		// Email configuration
 		'adminEmail'=>'admin@emailaddrss.com',
 		'multiplesAccounts'=>false,
@@ -132,7 +137,9 @@ $main = array(
 		'languages'=>array(
 			'es_mx',
 			'en_us',
-			'pt_br'
+			'pt_br',
+			'es_es',
+			'de_de'
 		),
 	),
 );

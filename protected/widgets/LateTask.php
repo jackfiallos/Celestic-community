@@ -13,6 +13,7 @@ Yii::import('zii.widgets.CPortlet');
 class LateTask extends CPortlet
 {
 	public $htmlOptions;
+	public $lineLenght = 4;
 	
 	/**
 	 * Class object initialization
@@ -32,7 +33,7 @@ class LateTask extends CPortlet
 	 */
 	public function getActivity()
     {
-		return Tasks::model()->findActivity(Yii::app()->user->id, Yii::app()->user->getState('project_selected'));
+		return Tasks::model()->findActivity(Yii::app()->user->id, Yii::app()->user->getState('project_selected'),10);
     }
 	
 	/**

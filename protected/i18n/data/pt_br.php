@@ -1,6 +1,6 @@
 <?php
 /**
- * Extends Locale data for 'pt_br'.
+ * Extends Locale data for 'pt_BR'.
  * In this file you can put custom locale settings that will be
  * merged with the ones provided by the framework
  * ( that are stored in <framework_dir>/i18n/data/ )

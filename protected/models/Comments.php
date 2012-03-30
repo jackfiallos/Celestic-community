@@ -9,7 +9,7 @@
  * @property string $comment_text
  * @property string $comment_resourceid 
  * @property integer $module_id
- * @property integer $user_id
+ * @property integer $project_id
  * @property integer $user_id
  *
  * The followings are the available model relations:
@@ -43,7 +43,7 @@ class Comments extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('comment_date, comment_text, user_id, module_id, comment_resourceid', 'required', 'message'=>Yii::t('inputValidations','RequireValidation')),
-			array('user_id, module_id, comment_resourceid', 'numerical', 'integerOnly'=>true),
+			array('user_id, module_id, comment_resourceid, project_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('comment_id, comment_date, comment_text, user_id, module_id, comment_resourceid', 'safe', 'on'=>'search'),
@@ -60,6 +60,7 @@ class Comments extends CActiveRecord
 		return array(
 			'User'=>array(self::BELONGS_TO, 'Users', 'user_id'),
 			'Module'=>array(self::BELONGS_TO, 'Modules', 'module_id'),
+			'Project'=>array(self::BELONGS_TO, 'Projects', 'project_id'),
 			'Documents'=>array(self::HAS_MANY, 'Documents', 'comment_id', 'joinType'=>'INNER JOIN'),
 		);
 	}
@@ -74,6 +75,7 @@ class Comments extends CActiveRecord
 			'comment_date' => Yii::t('comments','Date'),
 			'comment_text' => Yii::t('comments','Text'),
 			'comment_resourceid' => Yii::t('comments','Resource'),
+			'project_id' => Yii::t('comments','Project'),
 			'user_id' => Yii::t('comments','User'),
 			'module_id' => Yii::t('comments','Module'),
 		);
@@ -137,6 +139,38 @@ class Comments extends CActiveRecord
 			'limit'=>1,
 		));
 		return (bool)$isPropietary;
+	}
+	
+	public function findActivity($project_id, $limit = 10)
+	{
+		if (isset($project_id) || !empty($project_id))
+		{
+			$comments = Comments::model()->findAll(array(
+	            'condition'=>'t.project_id = :project_id AND t.comment_text NOT LIKE "%Status%"',
+				'limit'=>$limit,
+				'order'=>'t.comment_date DESC',
+				'together'=>true,
+				'params'=>array(
+					':project_id'=>$project_id,
+				)
+	        ));
+		}
+		else
+		{
+			$projects = Yii::app()->user->getProjects();
+			$InProjects = array(0);
+			foreach ($projects as $project)
+				array_push($InProjects, $project->project_id);
+			
+			$comments = Comments::model()->with('Module')->findAll(array(
+	            'condition'=>'t.project_id IN ('.implode(",", $InProjects).') AND t.comment_text NOT LIKE "%Status%"',
+				'limit'=>$limit,
+				'order'=>'t.comment_date DESC',
+				'together'=>true
+	        ));
+		}
+			
+		return $comments;
 	}
 	
 	public function behaviors(){

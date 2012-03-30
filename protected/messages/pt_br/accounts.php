@@ -6,20 +6,20 @@ return array(
 	'account_logo' => 'Logo',
 	'account_colorscheme' => 'Esquema de cor',
 	'account_companyName' => 'Nome da empresa',
-	'account_projectNumbers' => 'Numero de projectos',	
+	'account_projectNumbers' => 'N&uacute;mero de projetos',	
 	'account_storageSize' => 'Tamanho em disco',
-	'account_uniqueId' => 'Identificador unico',
-	'address_id' => 'Direccion',
+	'account_uniqueId' => 'Identificador único',
+	'address_id' => 'Endereço',
 	'timezone_id'=>'Timezone',
 	// FORMS
-	'FormAccount_logo' => 'Select an image to upload',
-	'FormAccount_colorscheme' => 'Yet unimplemented',
-	'FormAccount_companyName' => 'Set your company name (used for invoices)',
-	'FormAccount_uniqueId' => 'Unique Identifier like RFC',
+	'FormAccount_colorscheme' => 'Ainda n&atilde;o implementado',
+	'FormAccount_logo' => 'Selecione uma imagem para fazer upload',
+	'FormAccount_companyName' => 'Defina o nome da sua empresa(usado para faturas)',
+	'FormAccount_uniqueId' => 'Identificador único como RFC',
 	// FIELDS
-	'selectOption' => 'Select an Option',
-	'NewAccountRegistration' => 'New Account Registration',
-	'updateAccount' => 'Update Account',
+	'selectOption' => 'Selecione uma op&ccedil;&atilde;o',
+	'NewAccountRegistration' => 'Cadastro de Nova Conta',
+	'updateAccount' => 'Atualizar Conta',
 	
 );
 ?>

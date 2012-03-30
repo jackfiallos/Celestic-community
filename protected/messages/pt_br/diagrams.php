@@ -1,8 +1,8 @@
 <?php
 return array(
 	// FORMS
-	'TitleDiagram' => 'Diagram',
+	'TitleDiagram' => 'Diagramas',
 	// FIELDS
-	'FieldCreateDiagram' => 'Create',
+	'FieldCreateDiagram' => 'Criar',
 );
 ?>

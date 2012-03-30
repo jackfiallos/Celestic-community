@@ -18,7 +18,7 @@
 	<div id="wrapper" class="clearfix">
 		<div id="top">
 			<div id="header">
-				<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/images/celestic.png",CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']),Yii::app()->request->baseUrl, array('title'=>CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']));?>
+				<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl."/images/celestic.png",CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']),Yii::app()->createUrl('site'), array('title'=>CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']));?>
 				<?php if (!Yii::app()->user->isGuest){ ?>
 				<div id="info">
 					<h4><?php echo Yii::t('site','WelcomeMessage'); ?></h4>
@@ -53,6 +53,7 @@
 			
 			<div id="nav">
 				<?php
+					$selected = null;
 					if(!Yii::app()->user->isGuest)
 					{
 						// Navbar menu items
@@ -89,6 +90,7 @@
 						$this->widget('zii.widgets.CMenu',array(
 							'htmlOptions'=>array('class'=>'mega-container mega-grey'),
 							'items'=>$items,
+							'encodeLabel'=>false
 						));
 					}
 				?>
@@ -98,6 +100,7 @@
 				$this->widget('zii.widgets.CBreadcrumbs', array(
 					'links'=>$this->breadcrumbs,
 					'homeLink'=>($selected!=null) ? CHtml::link(Yii::app()->user->getState('project_selectedName'), Yii::app()->createUrl('site/index')) : CHtml::link(Yii::t('site','Home'), Yii::app()->createUrl('site/index')),
+					'encodeLabel'=>false
 				));
 			?>
 
@@ -137,9 +140,11 @@
 					</ul>
 				</div>
 				<ul>
-					<li class="language"><?php echo CHtml::link('Espa&ntilde;ol', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'es_mx'))), array('title'=>'Espanol')); ?></li>
-					<li class="language"><?php echo CHtml::link('Portugues', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'pt_br'))), array('title'=>'Portugues')); ?></li>
+					<li class="language"><?php echo CHtml::link('Espa&ntilde;ol-MX', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'es_mx'))), array('title'=>'Español México')); ?></li>
+					<li class="language"><?php echo CHtml::link('Portugues', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'pt_br'))), array('title'=>'Português')); ?></li>
 					<li class="language"><?php echo CHtml::link('English', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'en_us'))), array('title'=>'English')); ?></li>
+					<li class="language"><?php echo CHtml::link('Espa&ntilde;ol-ES', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'es_es'))), array('title'=>'Español España')); ?></li>
+					<li class="language"><?php echo CHtml::link('Deutsch', Yii::app()->createUrl(Yii::app()->controller->id."/".Yii::app()->controller->action->id, CMap::mergeArray(Yii::app()->controller->getActionParams(),array('lc'=>'de_de'))), array('title'=>'Deutsch')); ?></li>
 				</ul>
 				<div class="mod footerRibbon">
 					<?php echo CHtml::encode(Yii::app()->name).' v.'.Yii::app()->params['appVersion']; ?> - 

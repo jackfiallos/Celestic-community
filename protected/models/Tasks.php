@@ -114,7 +114,7 @@ class Tasks extends CActiveRecord
 		);
 	}
 	
-	public function findActivity($user_id, $project_id)
+	public function findActivity($user_id, $project_id, $limit = 0)
     {
         $criteria = new CDbCriteria;
 		// Si se ha seleccionado un proyecto
@@ -134,7 +134,7 @@ class Tasks extends CActiveRecord
 			);
 		}
 		$criteria->order = 't.task_startDate ASC';
-		$criteria->limit = 10;
+		if ($limit != 0) $criteria->limit = $limit;
 		
 		return Tasks::model()->with('Users')->together()->findAll($criteria);
     }

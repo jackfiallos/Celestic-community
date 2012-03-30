@@ -526,13 +526,14 @@ class BudgetsController extends Controller
 		{
 			// create Budget form search
 			$model = new BudgetsSearchForm;
-			$model->search();
-			$model->unsetAttributes();
+			//$model->unsetAttributes();
 			
 			// set model attributes from budget form
 			if(isset($_GET['BudgetsSearchForm']))
 				$model->attributes = $_GET['BudgetsSearchForm'];
 			
+			$model->search();
+				
 			$this->render('index',array(
 				'model'=>$model,
 				'status'=>Status::model()->findAllRequired(true),

@@ -6,7 +6,7 @@
  * @author Milo Schuman <miloschuman@gmail.com>
  * @link http://yii-highcharts.googlecode.com/
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
- * @version 0.2
+ * @version 0.5
  */
 
 /**
@@ -36,7 +36,7 @@
  * that need to be passed to the Highcharts JavaScript object. Please refer to
  * the demo gallery and documentation on the {@link http://www.highcharts.com/
  * Highcharts website} for possible options.
- * 
+ *
  * Alternatively, you can use a valid JSON string in place of an associative
  * array to specify options:
  *
@@ -83,60 +83,18 @@ class HighchartsWidget extends CWidget {
 		echo CHtml::closeTag('div');
 
 		// check if options parameter is a json string
-		if (is_string($this->options)) {
-			if (!$this->options = CJSON::decode($this->options))
+		if(is_string($this->options)) {
+			if(!$this->options = CJSON::decode($this->options))
 				throw new CException('The options parameter is not valid JSON.');
 			// TODO translate exception message
 		}
 
 		// merge options with default values
 		$defaultOptions = array('chart' => array('renderTo' => $id), 'exporting' => array('enabled' => true));
-		//$this->options = array_replace_recursive($defaultOptions, $this->options);
-		
-		if (function_exists('array_replace_recursive'))
-		{
-			$this->options = array_replace_recursive($defaultOptions, $this->options);
-		}
-		else
-			$this->options = HighchartsWidget::array_join($defaultOptions, $this->options);
-
+		$this->options = CMap::mergeArray($defaultOptions, $this->options);
 		$jsOptions = CJavaScript::encode($this->options);
 		$this->registerScripts(__CLASS__ . '#' . $id, "var chart = new Highcharts.Chart($jsOptions);");
 	}
-	
-	private function array_join()
-	{
-		// Get array arguments
-		$arrays = func_get_args();
-
-		// Define the original array
-		$original = array_shift($arrays);
-
-		// Loop through arrays
-		foreach ($arrays as $array)
-		{
-			// Loop through array key/value pairs
-			foreach ($array as $key => $value)
-			{
-				// Value is an array
-				if (is_array($value))
-				{
-					// Traverse the array; replace or add result to original array
-					$original[$key] = HighchartsWidget::array_join($original[$key], $array[$key]);
-				}
-
-				// Value is not an array
-				else
-				{
-					// Replace or add current value to original array
-					$original[$key] = $value;
-				}
-			}
-		}
-
-		// Return the joined array
-		return $original;
-	} 
 
 	/**
 	 * Publishes and registers the necessary script files.
@@ -146,7 +104,7 @@ class HighchartsWidget extends CWidget {
 	 */
 	protected function registerScripts($id, $embeddedScript) {
 		$basePath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR;
-		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, true);
+		$baseUrl = Yii::app()->getAssetManager()->publish($basePath, false, 1, YII_DEBUG);
 		$scriptFile = YII_DEBUG ? '/highcharts.src.js' : '/highcharts.js';
 
 		$cs = Yii::app()->clientScript;
@@ -154,14 +112,16 @@ class HighchartsWidget extends CWidget {
 		$cs->registerScriptFile($baseUrl . $scriptFile);
 
 		// register exporting module if enabled via the 'exporting' option
-		if ($this->options['exporting']['enabled']) {
-			$scriptFile = YII_DEBUG ? '/exporting.src.js' : '/exporting.js';
-			$cs->registerScriptFile($baseUrl . $scriptFile);
+		if($this->options['exporting']['enabled']) {
+			$scriptFile = YII_DEBUG ? 'exporting.src.js' : 'exporting.js';
+			$cs->registerScriptFile("$baseUrl/modules/$scriptFile");
 		}
-
-		$cs->registerScript($id, $embeddedScript);
+		
+		// register global theme if specified via the 'theme' option
+		if(isset($this->options['theme'])) {
+			$scriptFile = $this->options['theme'] . ".js";
+			$cs->registerScriptFile("$baseUrl/themes/$scriptFile");
+		}
+		$cs->registerScript($id, $embeddedScript, CClientScript::POS_LOAD);
 	}
-
 }
-
-?>

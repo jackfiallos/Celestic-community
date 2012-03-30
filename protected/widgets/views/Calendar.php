@@ -22,7 +22,7 @@
 					//$("#myDialog").dialog();
 				}',
 				'eventRender' => 'js:function(event, element) {
-        			element.find(".fc-event-title").html("").append($("<span class=\"fc-event-icons\"><img src=\"http://localhost/celestic/images/portlets/charts.png\"></span>"));
+        			element.find(".fc-event-title").html("").append($("<span class=\"fc-event-icons\"><img src=\"'.Yii::app()->request->baseUrl.'/images/portlets/charts.png\"></span>"));
     			}',
 			),		
 			'htmlOptions' => array(

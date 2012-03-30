@@ -1,10 +1,10 @@
 <?php $this->beginContent('application.views.layouts.main'); ?>
 
 <div class="container rounded">
-	<div class="grid_9">
+	<div class="grid_8">
 		<?php echo $content; ?>
 	</div>
-	<div class="grid_3">
+	<div class="grid_4">
 		<?php
 			// Milestones Access
 			if(Yii::app()->user->checkAccess('dashboardMilestones'))
@@ -25,6 +25,13 @@
 					)
 				));
 			}
+			// Commens ticker
+			$this->widget('widgets.CommentsFeed', array(
+				'htmlOptions' => array(
+					'class'=>'portlet'
+				),
+				'limit'=>10
+			));
 			
 			// Tasks Access
 			if(Yii::app()->user->checkAccess('dashboardTasks'))

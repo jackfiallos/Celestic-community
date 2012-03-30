@@ -1,9 +1,9 @@
 <?php
 return array(
 	// MODEL
-	'country_id' => 'Country',
-	'country_name' => 'Country Name',
-	'country_continent' => 'Country Continent',
-	'country_region' => 'Country Region',
+	'country_id' => 'Pa&iacute;s',
+	'country_name' => 'Nome do Pa&iacute;s',
+	'country_continent' => 'Continente',
+	'country_region' => 'Regi&atilde;o',
 );
 ?>

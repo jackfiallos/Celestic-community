@@ -1,20 +1,20 @@
 <?php
 return array(
 	// VIEWS
-	'TitleExpenseConcepts' => 'Expense Concepts',
+	'TitleExpenseConcepts' => 'Conceito de Gasto',
 	// FIELDS
-	'FieldCreate' => 'Create Concept',
-	'FieldUpdate' => 'Update Concept',
-	'FieldList' => 'List Concepts',
+	'FieldCreate' => 'Criar Conceito',
+	'FieldUpdate' => 'Atualizar Conceito',
+	'FieldList' => 'Listar Conceitos',
 	// FORMS
-	'FormExpensesConcept_quantity' => 'Type concept quantity',
-	'FormExpensesConcept_amount' => 'Type amount or value for this item',
-	'FormExpensesConcept_description' => 'Product description',
+	'FormExpensesConcept_quantity' => 'Digite a quantidade do produto',
+	'FormExpensesConcept_amount' => 'Digite o valor do produto',
+	'FormExpensesConcept_description' => 'Digite a descri&ccedil;&atilde;o do produto',
 	// MODEL
-	'FieldConceptId' => 'Concept',
-	'FieldQuantity' => 'Quantity',
-	'FieldDescription' => 'Description',
-	'FieldAmount' => 'Amount',
-	'FieldIdExpenses' => 'Expenses',
+	'FieldConceptId' => 'Conceito',
+	'FieldQuantity' => 'Quantidade',
+	'FieldDescription' => 'Descri&ccedil;&atilde;o',
+	'FieldAmount' => 'Montante',
+	'FieldIdExpenses' => 'Gastos',
 );
 ?>
