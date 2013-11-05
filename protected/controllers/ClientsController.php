@@ -247,7 +247,7 @@ class ClientsController extends Controller
 			$tmppw = $modelUsers->user_password;
 			
 			// if client hasn't address create an Address object, else load
-			if (!empty($model->address_id))
+			if (!empty($modelUsers->address_id))
 				$address = Address::model()->findByPk($modelUsers->address_id);
 			else
 				$address = new Address;
