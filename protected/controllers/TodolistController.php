@@ -81,7 +81,7 @@ class TodolistController extends Controller
 			$model->todolist_position = $position;
 			$model->todolist_text = Yii::t('site','defaultTodolistText');
 			$model->task_id = (int)Yii::app()->request->getParam('task_id',0);
-			//$model->save(false);
+			$model->save(false);
 			echo '<li id="todo-'.$model->primaryKey.'" class="todo">
 				<div class="actionsleft" style="float: left;padding-right:3px;">
 					<a href="#" class="check" title="'.Yii::t('site','CheckLink').'">'.Yii::t('site','CheckLink').'</a>
