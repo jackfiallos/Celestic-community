@@ -121,6 +121,8 @@ class VGGravatarWidget extends CWidget
 		
 		// Size
 		$this->params['s'] = (int) $this->size;
+		$this->htmlOptions['height'] = $this->size;
+		$this->htmlOptions['width'] = $this->size;
 		
 		// Rating
 		$this->params['r'] = $this->rating;
