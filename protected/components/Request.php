@@ -10,13 +10,13 @@
  * Generic Class with begin event to set automatic timezone application
  * 
  **/ 
-class Request
+class Request extends CComponent
 {
 	/**
 	 * Process for all begin request application
 	 * used to set init aplication timezone
 	 */
-	function begin()
+	static public function begin()
 	{
 		if (!Yii::app()->user->isGuest)
 		{
