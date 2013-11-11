@@ -22,7 +22,7 @@ class Request
 		{
 			if(Yii::app()->user->getState('timezone_name') == null)
 			{
-				$timezone = Timezones::getTimezoneSelected(Yii::app()->user->Accountid);
+				$timezone = Timezones::model()->getTimezoneSelected(Yii::app()->user->Accountid);
 				if (!empty($timezone->timezone_name))
 				{
 					Yii::app()->user->setState('timezone_name', $timezone->timezone_name);
