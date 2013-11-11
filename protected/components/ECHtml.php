@@ -21,7 +21,7 @@ class ECHtml extends CHtml
 	 * @param int $words
 	 * @return string new string splitted
 	 */
-	public function word_split($str,$words=15)
+	static public function word_split($str,$words=15)
 	{
 		$arr = preg_split("/[\s]+/", $str,$words+1);
 		$arr = array_slice($arr,0,$words);
